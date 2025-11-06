@@ -664,7 +664,7 @@ export default function GestorGastosApp() {
                   outerRadius={95}
                   label
                 >
-                  {dataCategorias.map((entry, index) => (
+                  {dataCategorias.map((_, index) => (
                     <Cell
                       key={`cell-${index}`}
                       fill={COLORS[index % COLORS.length]}
