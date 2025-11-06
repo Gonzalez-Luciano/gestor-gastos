@@ -16,7 +16,7 @@ type Movimiento = {
   nota?: string;
 };
 
-type Periodo = "hoy" | "semana" | "mes" | "anio" | "todo";
+type Periodo = "hoy" | "semana" | "mes" | "año" | "todo";
 
 // Helper para filtrar por período
 function inPeriodo(fechaISO: string, periodo: Periodo): boolean {
@@ -37,7 +37,7 @@ function inPeriodo(fechaISO: string, periodo: Periodo): boolean {
       const startOfMonth = new Date(hoy.getFullYear(), hoy.getMonth(), 1);
       return f >= startOfMonth && f <= hoy;
     }
-    case "anio": {
+    case "año": {
       const startOfYear = new Date(hoy.getFullYear(), 0, 1);
       return f >= startOfYear && f <= hoy;
     }
@@ -603,7 +603,7 @@ export default function GestorGastosApp() {
                 { key: "hoy", label: "Hoy" },
                 { key: "semana", label: "Semana" },
                 { key: "mes", label: "Mes" },
-                { key: "anio", label: "Año" },
+                { key: "año", label: "Año" },
                 { key: "todo", label: "Ciclo de vida" },
               ].map((p) => (
                 <button
@@ -895,7 +895,7 @@ export default function GestorGastosApp() {
                     <Input
                       placeholder="••••••••"
                       type="password"
-                      className="mt-1 bg-gray-800 border-gray-700 text-white focus-visible:ring-emerald-500"
+                      className="mt-1 ms-2 bg-gray-800 border-gray-700 text-white focus-visible:ring-emerald-500"
                     />
                   </div>
                 </div>
